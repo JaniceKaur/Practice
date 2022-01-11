@@ -1,21 +1,30 @@
 import heapq
 class Solution:
     def minSetSize(self, arr: List[int]) -> int:
-        c=dict()
-        for a in arr:
-            if a in c.keys():
-                c[a]+=1
-            else:
-                c[a]=1
-        
+        start=0
+        end=0
+        arr.sort()
         n=len(arr)
-        y=list(c.values())
-        heapq._heapify_max(y)
+        count=0
+        c=[]
+        curr=arr[start]
+        while(start<n and end<n):
+            if (arr[end]!=curr):
+                c.append(count)
+                count=0
+                start=end
+                curr=arr[start]
+            else:
+                end+=1
+                count+=1
+        if(count):
+            c.append(count)
+            
+        heapq._heapify_max(c)
         x=n
         m=0
-        print(y)
-        while(x>n/2 and len(y)>0):
-            pop=heapq._heappop_max(y)
+        while(x>n/2 and len(c)>0):
+            pop=heapq._heappop_max(c)
             x-=pop
             m+=1
         return m
