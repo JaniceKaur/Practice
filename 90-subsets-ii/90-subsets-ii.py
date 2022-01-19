@@ -1,8 +1,8 @@
 class Solution:
     def subset(self, idx,nums,l1=list()):
         if(idx>=len(nums)):
-            if(l1 not in self.l):
-                self.l.append(l1)
+            if(sorted(l1) not in self.l):
+                self.l.append(sorted(l1))
                 return 
             else:
                 return
