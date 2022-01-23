@@ -5,7 +5,6 @@ public:
         int n=obstacleGrid[0].size();
         int grid[m][n];
         memset(grid, -1, sizeof(grid));
-        grid[0][0]=1;
         for(int i=0;i<m;i++)
             for(int j=0;j<n;j++){
                 if(i==0 && j==0)
