@@ -11,7 +11,6 @@ public:
         return dp[i][j]=min(d,dg);
     }
     int minimumTotal(vector<vector<int>>& triangle) {
-        
         int n=triangle.size();
         vector<vector<int>> dp(n,vector<int> (n,-1));
         int i=0,j=0;
