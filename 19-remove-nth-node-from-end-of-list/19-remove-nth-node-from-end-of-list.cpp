@@ -29,9 +29,7 @@ public:
             ptr=ptr->next;
             preptr=preptr->next;
         }
-        ListNode* temp=preptr->next;
         preptr->next=preptr->next->next;
-        delete(temp);
         return head; 
     }
     
